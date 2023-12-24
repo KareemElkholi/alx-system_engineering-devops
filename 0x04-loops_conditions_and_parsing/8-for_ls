@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Display the content of the current directory
+files=$(ls)
+for i in $files
+do
+	echo "${i#*-}"
+done
