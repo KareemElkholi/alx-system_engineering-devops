@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Configure HAproxy
+sudo su
+apt update
+apt install -y haproxy
+echo -e "frontend front\n\tbind *:80\n\tdefault_backend back\n\nbackend back\n\tserver s1 54.208.84.114\n\tserver s2 100.26.175.13" >> /etc/haproxy/haproxy.cfg
+service haproxy restart
